@@ -19,3 +19,10 @@ SELECT released_year, COUNT(*) as num_books FROM books
 GROUP BY released_year
 ORDER BY num_books DESC;
 
+SELECT MIN(released_year) AS earliest_year FROM books;
+SELECT MAX(released_year) AS latest_year FROM books;
+SELECT MAX(pages) FROM books;
+SELECT MIN(author_lname), MAX(author_lname)FROM books;
+
+
+
