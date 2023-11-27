@@ -34,3 +34,15 @@ WHERE pages = (SELECT MAX(pages) FROM books);
 SELECT title, released_year FROM books
 WHERE released_year = (SELECT MIN(released_year) FROM books);
 
+SELECT author_fname, author_lname FROM books
+ORDER BY author_lname;
+
+SELECT author_lname, COUNT(*) FROM books
+GROUP BY author_lname, author_fname;
+
+SELECT author_fname, author_lname, COUNT(*) FROM books
+GROUP BY author_lname, author_fname;
+
+SELECT CONCAT(author_fname, ' ', author_lname) AS author, COUNT(*) FROM books
+GROUP BY author
+ORDER BY COUNT(*) DESC;
